@@ -14,9 +14,9 @@
          Ret navn, klasse og evt. fag.
          ========================================================= -->
     <header class="top">
-        <h1>Min portfolio</h1>
-        <p>Navn: Dit navn eg børge</p>
-        <p>Klasse: Din klasse</p>
+        <h1>Arduino</h1>
+        <p><El-teknik></p>
+        <p>2026</p>
     </header>
 
 
@@ -38,11 +38,10 @@
              Skriv en kort præsentation af dig selv.
              ===================================================== -->
         <section class="blok" id="om-mig">
-            <h2>Om mig</h2>
+            <h2>Om dette dokument</h2>
 
             <p>
-                Skriv lidt om dig selv her. Du kan for eksempel skrive om
-                dine interesser, hvad du gerne vil lære, og hvad du arbejder med.
+               Et forsøg på at facillitere forbedring af jeres Arduino programmeringskompetencer. 
             </p>
 
             <!-- PROFILBILLEDE
@@ -54,12 +53,12 @@
                  når du vil vise et profilbillede.
             -->
 
-            <!--
+
             <figure>
-                <img src="billeder/profil.jpg" alt="Billede af mig">
-                <figcaption>Et billede af mig.</figcaption>
+                <img src="billeder/Arduino uno.png" alt="Arduino UNO">
+                <figcaption>Arduino UNO.</figcaption>
             </figure>
-            -->
+
         </section>
 
 
@@ -68,9 +67,9 @@
              Projektblokke placeres under denne overskrift.
              ===================================================== -->
         <section class="blok" id="projekter">
-            <h2>Mine projekter og opgaver</h2>
+            <h2>Projekter og opgaver</h2>
             <p>
-                Her samler jeg de projekter og opgaver, som jeg arbejder med.
+                Her samles de projekter og opgaver, som I skal arbejde med.
             </p>
         </section>
 
@@ -83,16 +82,18 @@
              ===================================================== -->
         <section class="blok projekt">
 
-            <h2>Projekt 1: Skriv projektets titel</h2>
+            <h2>Opgave 1</h2>
 
             <h3>Opgaven</h3>
             <p>
-                Beskriv kort, hvad opgaven eller projektet går ud på.
+                Blink og SOS
             </p>
 
-            <h3>Mit arbejde</h3>
+            <h3>Lidt mere om opgave</h3>
             <p>
-                Beskriv, hvad du har lavet, og hvordan du har arbejdet med opgaven.
+                Opgaven går ud på at få en LED til at blinke i et bestemt mønster. Først skal du få LED'en til at blinke med et fast interval, 
+                og derefter skal du programmere den til at blinke SOS i morse-kode. Opgave kan løses enten i Arduino IDE eller i Tinkercad.
+                Opgave 1a Blink leg med blink frekvens og interval. Opgave 1b SOS blink i morse-kode(spagettikode). Opgave 1c SOS blink i morse-kode med funktioner.
             </p>
 
 
@@ -103,9 +104,9 @@
                  3. Ret billedteksten.
                  ================================================= -->
             <figure>
-                <img src="billeder/mit-projekt.jpg" alt="Billede af mit projekt">
+                <img src="billeder/Blink.png" alt="Billede af mit projekt">
                 <figcaption>
-                    Figur 1: Skriv en kort forklaring til billedet.
+                    Figur 1: Blink i Tinkercad.
                 </figcaption>
             </figure>
 
@@ -115,13 +116,25 @@
                  Skriv eller indsæt kode mellem <code> og </code>.
                  Indrykningen bliver bevaret på hjemmesiden.
                  ================================================= -->
-            <h3>Min kode</h3>
+            <h3>Eksempelkode/Hint</h3>
 
 <pre><code># Indsæt din kode her
 
-for i in range(5):
-    print("Hej verden")</code></pre>
+void setup()
+{
+  pinMode(LED_BUILTIN, OUTPUT);
+}
 
+void loop()
+{
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  // turn the LED off by making the voltage LOW
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+</code></pre>
 
             <!-- =================================================
                  LINK
@@ -132,13 +145,13 @@ for i in range(5):
 
             <p>
                 <a class="knap"
-                   href="https://example.com"
+                   href="https://www.tinkercad.com/things/bvdPLBeAC6J/editel?returnTo=%2Fdashboard&sharecode=PDHDTiiOw7ZuTYA7VJb2Gi3HTBZYkhM_Py9dyvsW4us"
                    target="_blank"
                    rel="noopener">
-                    Åbn mit projekt
+                    Link til Tinkercad
                 </a>
             </p>
-
+<!--
             <p>
                 Du kan også lave et almindeligt link:
                 <a href="https://example.com" target="_blank" rel="noopener">
@@ -146,12 +159,12 @@ for i in range(5):
                 </a>
             </p>
 
-
+        -->
             <!-- =================================================
                  TEST / RESULTATER
                  Kopiér en <tr>...</tr>-blok for at få flere rækker.
                  ================================================= -->
-            <h3>Test og resultater</h3>
+        <!--    <h3>Test og resultater</h3>
 
             <table>
                 <thead>
@@ -184,9 +197,23 @@ for i in range(5):
             <h3>Hvad lærte jeg?</h3>
             <p>
                 Skriv 2-4 linjer om det vigtigste, du lærte.
-            </p>
+            </p>-->
 
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- =====================================================
