@@ -201,13 +201,98 @@ void loop()
 
         </section>
 
+        <section class="blok projekt">
+
+            <h2>Opgave 1.1</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Blink uden delay
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+                Her skal I primært læse koden og forstå, hvordan den virker. I kan evt. ændre intervallet og se, hvordan det påvirker LED'ens blinkefrekvens.
+            </p>
 
 
+            <!-- =================================================
+                 BILLEDE
+                 1. Læg billedet i mappen "billeder".
+                 2. Ret filnavnet efter src="...".
+                 3. Ret billedteksten.
+                 ================================================= -->
+            <figure>
+                <img src="billeder/Blink.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: Blink i Tinkercad.
+                </figcaption>
+            </figure>
 
 
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Eksempelkode/Hint</h3>
+
+<pre><code># Indsæt din kode her
 
 
+const int ledPin =  LED_BUILTIN;
 
+
+int ledState = LOW;        
+
+unsigned long previousMillis = 0;       
+
+const long interval = 1000;
+
+void setup() 
+	{
+  		pinMode(ledPin, OUTPUT);
+	}
+
+void loop() 
+{
+ 	unsigned long currentMillis = millis();
+
+  	if (currentMillis - previousMillis >= interval) 
+    {
+     	previousMillis = currentMillis;
+
+   		if (ledState == LOW) 
+    		{
+     			ledState = HIGH;
+    		} 
+      	else 
+        	{
+      			ledState = LOW;
+    		}
+      	digitalWrite(ledPin, ledState);
+  	}
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
+
+
+        </section>
 
 
 
