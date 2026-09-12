@@ -294,6 +294,340 @@ void loop()
 
         </section>
 
+       </section>
+
+        <section class="blok projekt">
+
+            <h2>Opgave 1.2</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Hello World
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+
+
+                Her skal I lære at skrive tekst til Serial Monitor. I skal bruge Serial Monitor til at se, hvad jeres Arduino sender af data. I kan starte med at sende "Hello World" og derefter eksperimentere med at sende andre beskeder.
+                Undringsspørgsmål
+                <ul>
+                    <li>Hvad er forskellen på Serial.print() og Serial.println()? </li>
+                    <li>Hvad sker der, hvis I sender tal i stedet for tekst?</li>
+                    <li>Hvad er baud rate, og hvorfor skal den være den samme i koden og i Serial Monitor? </li>
+                    </ul>   
+          
+            </p>
+
+
+            <!-- =================================================
+                 BILLEDE
+                 1. Læg billedet i mappen "billeder".
+                 2. Ret filnavnet efter src="...".
+                 3. Ret billedteksten.
+                 ================================================= -->
+            <figure>
+                <img src="billeder/Hello.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: Hello World.
+                </figcaption>
+            </figure>
+
+
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Eksempelkode/Hint</h3>
+
+<pre><code># Indsæt din kode her
+
+
+void setup() 
+	{
+        Serial.begin(9600);
+        
+	}
+
+void loop() 
+{
+ 	Serial.println("Hello World");
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="https://docs.arduino.cc/built-in-examples/"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
+
+
+        </section>
+
+
+        <section class="blok projekt">
+
+            <h2>Opgave 1.3</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Hello World + blink
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+
+
+                Her skal I kombinere det, I har lært i de to foregående opgaver. 
+                I skal få LED'en til at blinke(bruge evt. LED_Builtin), samtidig med at Arduino sender beskeder til Serial Monitor. I kan starte med at sende "Hello World" hver gang LED'en tænder, og derefter eksperimentere med at sende andre beskeder.
+                <ul>
+                    <li>Kan du sende flere beskeder samtidig?</li>
+                    <li>Kan du få LED'en til at blinke det antal gange den har sendt en besked?</li>
+                    <li>Kan du blinke moserkode og udskrive SOS? </li>
+                    </ul>   
+                Husk at definere pinMode for LED'en i setup() og at bruge delay() eller millis() til at styre blinket.
+            </p>
+
+
+            <!-- =================================================
+                 BILLEDE
+                 1. Læg billedet i mappen "billeder".
+                 2. Ret filnavnet efter src="...".
+                 3. Ret billedteksten.
+                 ================================================= -->
+            <figure>
+                <img src="billeder/Hello.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: Hello World.
+                </figcaption>
+            </figure>
+
+
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Eksempelkode/Hint</h3>
+
+<pre><code># Indsæt din kode her
+
+
+void setup() 
+	{
+        Serial.begin(9600);
+        pinMode("jeres Pin", OUTPUT);
+	}
+
+void loop() 
+{
+ 	Serial.println("Hello World");
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="https://docs.arduino.cc/built-in-examples/"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
+
+
+        </section>
+
+
+        <section class="blok projekt">
+
+            <h2>Opgave 2.1 Digitalt Input</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Button Input
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+                Her skal I registrere input fra en knap. I skal bruge en knap til at tænde og slukke for LED'en, samtidig med at Arduino sender beskeder til Serial Monitor. I kan starte med at sende "Button Pressed" hver gang knappen trykkes, og derefter eksperimentere med at sende andre beskeder.
+
+                <ul>
+                    <li>Tænd og sluk LED'en med knap</li>
+                    <li>Vælg mellem forskellige LED</li>
+                    <li>Tæl antal knaptryk</li>
+                    </ul>   
+                Husk at definere pinMode for LED'en i setup() og knap.
+            </p>
+
+
+            <!-- =================================================
+                 BILLEDE
+                 1. Læg billedet i mappen "billeder".
+                 2. Ret filnavnet efter src="...".
+                 3. Ret billedteksten.
+                 ================================================= -->
+            <figure>
+                <img src="billeder/Button.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: Button Input.
+                </figcaption>
+            </figure>
+
+
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Kode Hint</h3>
+
+<pre><code># Indsæt din kode her
+
+
+void setup() 
+	{
+        Serial.begin(9600);
+        pinMode .....................;
+        pinMode("jeres Pin", INPUT);
+	}
+
+void loop() 
+{
+ 	  	if (buttonState != lastbuttonState)
+    {
+      if (buttonState == 1)
+      {
+      	number++;
+      }
+      lastbuttonState = buttonState;
+    }
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="https://docs.arduino.cc/built-in-examples/"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
+
+
+        </section>
+
+        <section class="blok projekt">
+
+            <h2>Opgave 2.2 Analog Input</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Analog Input
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+                Her skal I registrere input fra en analog sensor. I skal bruge en analog sensor til at måle en værdi og sende denne værdi til Serial Monitor. I kan starte med at sende "Analog Value: [værdi]" hver gang værdien ændres, og derefter eksperimentere med at sende andre beskeder.
+
+                <ul>
+
+                    <li>Læs analog værdi og udskriv til serial monitor</li>
+                    <li>Læs analog værdi og tænd forskellige LED'er afhængigt af værdien </li>
+                    <li>Læs analog værdi og udskriv til serial monitor når knappen trykkes</li>
+                    </ul>   
+                Husk at definere pinMode for LED'en i setup() og analog sensor.
+            </p>
+
+
+            <!-- =================================================
+                 BILLEDE
+                 1. Læg billedet i mappen "billeder".
+                 2. Ret filnavnet efter src="...".
+                 3. Ret billedteksten.
+                 ================================================= -->
+            <figure>
+                <img src="billeder/Analog.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: Analog Sensor Input.
+                </figcaption>
+            </figure>
+
+
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Kode Hint</h3>
+
+<pre><code># Indsæt din kode her
+
+
+void setup() 
+	{
+        Serial.begin(9600);
+        pinMode .....................;
+        pinMode(analogPin, INPUT);
+	}
+
+void loop() 
+{
+
+        int Lys = analogRead(LDR);
+ 	  	if (buttonState != lastbuttonState)
+    {
+      if (buttonState == 1)
+      {
+      	number++;
+      }
+      lastbuttonState = buttonState;
+    }
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="https://docs.arduino.cc/built-in-examples/"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
+
+
+        </section>
 
 
 
@@ -327,6 +661,15 @@ void loop()
                 Næste gang vil jeg gerne blive bedre til ...
             </p>
         </section>
+
+
+
+
+
+
+
+
+
 
     </main>
 
