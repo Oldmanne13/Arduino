@@ -599,14 +599,8 @@ void loop()
 {
 
         int Lys = analogRead(LDR);
- 	  	if (buttonState != lastbuttonState)
-    {
-      if (buttonState == 1)
-      {
-      	number++;
-      }
-      lastbuttonState = buttonState;
-    }
+ 	  	Serial.print("Lys: ");
+        Serial.println(Lys);
 }
 </code></pre>
 
@@ -631,21 +625,223 @@ void loop()
 
 
 
+        <section class="blok projekt">
+
+            <h2>Opgave 3.1 Liquid crystal display</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Udskrivning til display
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+                Her skal I registrere input fra en analog sensor. 
+                I skal bruge en analog sensor til at måle en værdi og sende denne værdi til et LCD display. 
+                I kan starte med at sende "Analog Value: [værdi]" hver gang værdien ændres,
+                 og derefter eksperimentere med at sende andre beskeder.   
+
+                <ul>
+
+                    <li>Læs analog værdi og udskriv til LCD display</li>
+                    <li>Læs analog værdi og tænd forskellige LED'er afhængigt af værdien </li>
+                    <li>Læs analog værdi og udskriv til LCD display når knappen trykkes</li>
+                    </ul>   
+                Husk at definere pinMode for LED'en i setup() og analog sensor.
+            </p>
 
 
+            <!-- =================================================
+                 BILLEDE
+                 1. Læg billedet i mappen "billeder".
+                 2. Ret filnavnet efter src="...".
+                 3. Ret billedteksten.
+                 ================================================= -->
+            <figure>
+                <img src="billeder/LCD.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: LCD Display.
+                </figcaption>
+            </figure>
 
 
-        <!-- =====================================================
-             EKSTRA PROJEKT
-             Kopiér projektblokken ovenfor og indsæt den her,
-             når du får en ny opgave.
-             ===================================================== -->
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Kode eksempel fra Arduino IDE</h3>
+
+<pre><code># Indsæt din kode her
+
+// C++ code
+//
+/*
+  LiquidCrystal Library - Hello World
+
+ 
+
+  The circuit:
+  * LCD RS pin to digital pin 12
+  * LCD Enable pin to digital pin 11
+  * LCD D4 pin to digital pin 5
+  * LCD D5 pin to digital pin 4
+  * LCD D6 pin to digital pin 3
+  * LCD D7 pin to digital pin 2
+  * LCD R/W pin to ground
+  * LCD VSS pin to ground
+  * LCD VCC pin to 5V
+  * 10K resistor:
+  * ends to +5V and ground
+  * wiper to LCD VO pin (pin 3)
+
+  Library originally added 18 Apr 2008  by David
+  A. Mellis
+  library modified 5 Jul 2009  by Limor Fried
+  (http://www.ladyada.net)
+  example added 9 Jul 2009  by Tom Igoe
+  modified 22 Nov 2010  by Tom Igoe
+
+  This example code is in the public domain.
+
+  http://www.arduino.cc/en/Tutorial/LiquidCrystal
+*/
+
+#include <LiquidCrystal.h>
+
+int seconds = 0;
+
+LiquidCrystal lcd_1(12, 11, 5, 4, 3, 2);
+
+void setup()
+{
+  lcd_1.begin(16, 2); // Set up the number of columns and rows on the LCD.
+
+  // Print a message to the LCD.
+  lcd_1.print("hello world!");
+}
+
+void loop()
+{
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting
+  // begins with 0):
+  lcd_1.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd_1.print(seconds);
+  delay(1000); // Wait for 1000 millisecond(s)
+  seconds += 1;
+
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="https://docs.arduino.cc/built-in-examples/"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
 
 
-        <!-- =====================================================
-             REFLEKSION
-             Bruges til en samlet refleksion over et forløb.
-             ===================================================== -->
+        </section>
+
+       <section class="blok projekt">
+
+            <h2>Opgave 3.2 Liquid crystal display med I2C</h2>
+
+            <h3>Opgaven</h3>
+            <p>
+                Udskrivning til display
+            </p>
+
+            <h3>Lidt mere om opgave</h3>
+            <p>
+                Samme som ovenstående opgave, men her bruger i et display med I2C interface. I skal bruge en analog sensor til at måle en værdi og sende denne værdi til et LCD display.
+                I kan starte med at sende "Analog Value: [værdi]" hver gang værdien ændres, og derefter eksperimentere med at sende andre beskeder.
+
+                <ul>
+
+                    <li>Læs analog værdi og udskriv til LCD display</li>
+                    <li>Læs analog værdi og tænd forskellige LED'er afhængigt af værdien </li>
+                    <li>Læs analog værdi og udskriv til LCD display når knappen trykkes</li>
+                    </ul>   
+                Husk at definere pinMode for LED'en i setup() og analog sensor.
+            </p>
+
+
+            <figure>
+                <img src="billeder/LCD_I2C.png" alt="Billede af mit projekt">
+                <figcaption>
+                    Figur 1: LCD Display.
+                </figcaption>
+            </figure>
+
+
+            <!-- =================================================
+                 KODEBLOK
+                 Skriv eller indsæt kode mellem <code> og </code>.
+                 Indrykningen bliver bevaret på hjemmesiden.
+                 ================================================= -->
+            <h3>Kode eksempel fra Arduino IDE</h3>
+
+<pre><code># Indsæt din kode her
+
+// C++ code
+//
+#include <Adafruit_LiquidCrystal.h>
+
+int seconds = 0;
+
+Adafruit_LiquidCrystal lcd_1(0);
+
+void setup()
+{
+  lcd_1.begin(16, 2);
+
+  lcd_1.print("hello world");
+}
+
+void loop()
+{
+  lcd_1.setCursor(0, 1);
+  lcd_1.print(seconds);
+  lcd_1.setBacklight(1);
+  delay(500); // Wait for 500 millisecond(s)
+  lcd_1.setBacklight(0);
+  delay(500); // Wait for 500 millisecond(s)
+  seconds += 1;
+}
+</code></pre>
+
+            <!-- =================================================
+                 LINK
+                 Ret adressen efter href="...".
+                 Ret teksten mellem <a> og </a>.
+                 ================================================= -->
+            <h3>Links</h3>
+
+            <p>
+                <a class="knap"
+                   href="https://docs.arduino.cc/built-in-examples/"
+                   target="_blank"
+                   rel="noopener">
+                    Link til Tinkercad
+                </a>
+            </p>
+
+
+        </section>
+
+
         <section class="blok" id="refleksion">
             <h2>Min refleksion</h2>
 
