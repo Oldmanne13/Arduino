@@ -25,7 +25,7 @@
          href="#om-mig" hopper til et område på samme side.
          ========================================================= -->
     <nav class="menu">
-        <a href="#om-mig">Om mig</a>
+        <a href="#formål">Formål</a>
         <a href="#projekter">Mine projekter</a>
         <a href="#refleksion">Refleksion</a>
     </nav>
@@ -34,11 +34,11 @@
     <main class="container">
 
         <!-- =====================================================
-             OM MIG
+             FORMÅL
              Skriv en kort præsentation af dig selv.
              ===================================================== -->
-        <section class="blok" id="om-mig">
-            <h2>Om dette dokument</h2>
+        <section class="blok" id="formål">
+            <h2>Formål</h2>
 
             <p>
                Et forsøg på at facillitere forbedring af jeres Arduino programmeringskompetencer. 
@@ -136,6 +136,46 @@ void loop()
 }
 </code></pre>
 
+<h3>Kode for blink med for-løkke og if-statement</h3>
+
+<pre><code># Indsæt din kode her
+
+int LED = 9;
+int pause = 0;
+int num =0;
+void setup()
+{
+  
+  Serial.begin(9600);
+  pinMode(LED, OUTPUT);
+}
+
+void loop()
+{
+  for (num = 0; num< 9; num++)
+  {
+  	if ((num>0 && num <3) || (num >5 && num <9))
+  	{
+    	pause = 500;
+      	Serial.println("500");
+        Serial.println(num);
+  	}
+  
+  	else
+  	{
+    	pause = 1000;
+        Serial.println("1000");
+  	}
+    
+    digitalWrite(LED, HIGH);
+  	delay(pause); 
+  	digitalWrite(LED, LOW);
+  	delay(pause);
+    
+    }
+
+}
+</code></pre>
             <!-- =================================================
                  LINK
                  Ret adressen efter href="...".
