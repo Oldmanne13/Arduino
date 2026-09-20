@@ -28,6 +28,9 @@
         <a href="#formål">Formål</a>
         <a href="#projekter">Mine projekter</a>
         <a href="#refleksion">Refleksion</a>
+
+
+  
     </nav>
 
 
@@ -253,6 +256,7 @@ void loop()
             <h3>Lidt mere om opgave</h3>
             <p>
                 Her skal I primært læse koden og forstå, hvordan den virker. I kan evt. ændre intervallet og se, hvordan det påvirker LED'ens blinkefrekvens.
+
             </p>
 
 
@@ -279,26 +283,28 @@ void loop()
 
 <pre><code># Indsæt din kode her
 
+/* her er et eksempel på, hvordan man kan få en LED til at blinke uden at bruge delay(). 
+I stedet bruger vi millis() til at holde styr på tiden og skifte LED'ens tilstand, 
+når der er gået et bestemt interval. */
 
-const int ledPin =  LED_BUILTIN;
+// I starter med at definere pin-nummeret for LED'en 
+// og nogle variabler til at holde styr på LED'ens tilstand og tiden.
 
-
+const int ledPin =  LED_BUILTIN;   //const int betyder, at værdien ikke kan ændres senere i koden
 int ledState = LOW;        
-
-unsigned long previousMillis = 0;       
-
+unsigned long previousMillis = 0;    // unsigned long betyder, at variablen kan holde et meget stort positivt tal.   
 const long interval = 1000;
 
 void setup() 
 	{
-  		pinMode(ledPin, OUTPUT);
+  		pinMode(ledPin, OUTPUT); // sætter LED-pinnen som output 
 	}
 
 void loop() 
 {
- 	unsigned long currentMillis = millis();
+ 	unsigned long currentMillis = millis(); // millis() returnerer antal millisekunder siden Arduinoen startede.
 
-  	if (currentMillis - previousMillis >= interval) 
+  	if (currentMillis - previousMillis >= interval)  
     {
      	previousMillis = currentMillis;
 
@@ -434,7 +440,7 @@ void loop()
                 <ul>
                     <li>Kan du sende flere beskeder samtidig?</li>
                     <li>Kan du få LED'en til at blinke det antal gange den har sendt en besked?</li>
-                    <li>Kan du blinke moserkode og udskrive SOS? </li>
+                    <li>Kan du blinke mosekode og udskrive SOS? Her kan i med fordel bruge eksempelkoden fra blink</li>
                     </ul>   
                 Husk at definere pinMode for LED'en i setup() og at bruge delay() eller millis() til at styre blinket.
             </p>
