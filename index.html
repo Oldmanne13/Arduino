@@ -438,8 +438,9 @@ void loop()
                 Her skal I kombinere det, I har lært i de to foregående opgaver. 
                 I skal få LED'en til at blinke(bruge evt. LED_Builtin), samtidig med at Arduino sender beskeder til Serial Monitor. I kan starte med at sende "Hello World" hver gang LED'en tænder, og derefter eksperimentere med at sende andre beskeder.
                 <ul>
-                    <li>Kan du sende flere beskeder samtidig?</li>
-                    <li>Kan du få LED'en til at blinke det antal gange den har sendt en besked?</li>
+                    <li>Kan du sende flere beskeder samtidig eg. Serial.print("Besked 1"); Serial.println("Besked 2");?</li>
+                    <li>Det er ikke anbefalet men man kan også concatenate strengene eg. Serial.print("Besked 1" + "Besked 2"); eller Serial.print(String("Besked 1") + variable);</li>
+                    <li>Kan du få LED'en til at blinke det antal gange den har sendt en besked? Altså ved blink 1 blink en gang skriv 1, ved blink 2, blink 2 gange og skriv 2, osv.</li>
                     <li>Kan du blinke mosekode og udskrive SOS? Her kan i med fordel bruge eksempelkoden fra blink</li>
                     </ul>   
                 Husk at definere pinMode for LED'en i setup() og at bruge delay() eller millis() til at styre blinket.
@@ -472,7 +473,7 @@ void loop()
 
 void setup() 
 	{
-        Serial.begin(9600);
+        Serial.begin(9600); // Start Serial Monitor nmed baud rate 9600
         pinMode("jeres Pin", OUTPUT);
 	}
 
@@ -513,9 +514,12 @@ void loop()
 
             <h3>Lidt mere om opgave</h3>
             <p>
-                Her skal I registrere input fra en knap. I skal bruge en knap til at tænde og slukke for LED'en, samtidig med at Arduino sender beskeder til Serial Monitor. I kan starte med at sende "Button Pressed" hver gang knappen trykkes, og derefter eksperimentere med at sende andre beskeder.
+                Her skal I registrere input fra en knap. 
+                I skal bruge en knap til at tænde og slukke for LED'en, samtidig med at Arduino sender beskeder til Serial Monitor. 
+                I kan starte med at sende "Button Pressed" hver gang knappen trykkes, og derefter eksperimentere med at sende andre beskeder.
 
                 <ul>
+                    <li>Registre knaptryk og skriv "button pressed"</li>
                     <li>Tænd og sluk LED'en med knap</li>
                     <li>Vælg mellem forskellige LED</li>
                     <li>Tæl antal knaptryk</li>
@@ -545,8 +549,7 @@ void loop()
                  ================================================= -->
             <h3>Kode Hint</h3>
 
-<pre><code># Indsæt din kode her
-
+<pre><code>
 
 void setup() 
 	{
@@ -598,8 +601,9 @@ void loop()
 
             <h3>Lidt mere om opgave</h3>
             <p>
-                Her skal I registrere input fra en analog sensor. I skal bruge en analog sensor til at måle en værdi og sende denne værdi til Serial Monitor. I kan starte med at sende "Analog Value: [værdi]" hver gang værdien ændres, og derefter eksperimentere med at sende andre beskeder.
-
+                I har tidligere arbejdet med digitale input, men her skal I arbejde med analog input. Hvad er forskellen på digitalt og analogt input? 
+                I skal bruge en analog sensor til at måle en værdi(eg. lys) og sende denne værdi til Serial Monitor.
+                I kan starte med at sende "Analog Value: [værdi]" til serial monitor.
                 <ul>
 
                     <li>Læs analog værdi og udskriv til serial monitor</li>
@@ -631,9 +635,7 @@ void loop()
                  ================================================= -->
             <h3>Kode Hint</h3>
 
-<pre><code># Indsæt din kode her
-
-
+<pre><code>
 void setup() 
 	{
         Serial.begin(9600);
@@ -683,9 +685,8 @@ void loop()
             <h3>Lidt mere om opgave</h3>
             <p>
                 Her skal I registrere input fra en analog sensor. 
-                I skal bruge en analog sensor til at måle en værdi og sende denne værdi til et LCD display. 
-                I kan starte med at sende "Analog Value: [værdi]" hver gang værdien ændres,
-                 og derefter eksperimentere med at sende andre beskeder.   
+                I skal bruge en analog sensor til at måle en værdi og sende denne værdi til et LCD display, i stedet for Serial Monitor. 
+                I kan starte med at sende "Analog Value: [værdi]" og dereftereksperimentere med at sende andre beskeder.   
 
                 <ul>
 
@@ -975,12 +976,12 @@ void loop()
                  Skriv eller indsæt kode mellem <code> og </code>.
                  Indrykningen bliver bevaret på hjemmesiden.
                  ================================================= -->
-<!--            <h3>Kode eksempel fra Arduino IDE</h3>
+           <h3>Kode eksempel fra Arduino IDE</h3>
 
 <pre><code># Indsæt din kode her
 // C++ code
 //
-#include <Adafruit_LiquidCrystal.h>
+#include 
 
 int seconds = 0;
 
@@ -989,7 +990,7 @@ int ldrValue = 0
 
 void setup()
 {
-  lcd_1.begin(16, 2);
+  lcd_1.begin(16, 6);
 
   lcd_1.print("Lys");
 }
@@ -1001,7 +1002,7 @@ void loop()
   int luX = ldrValue/10;
   lcd_1.setCursor(0, 1);
   lcd_1.print(millis()/1000);
-  lcd_1.setBacklight(1);
+  lcd_.setBacklight(1);
   lcd_1.setCursor(13, 0);
   lcd_1.print("Binar ")
   lcd_1.print(ldrValue);
@@ -1014,7 +1015,7 @@ void loop()
 }
 
 </code></pre>
--->
+
             <!-- =================================================
                  LINK
                  Ret adressen efter href="...".
